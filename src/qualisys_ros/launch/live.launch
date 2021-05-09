@@ -1,0 +1,14 @@
+<launch>
+  <arg name="server" default="127.0.0.1"/>
+  <arg name="rate_limit" default="100"/>
+
+  <node pkg="qualisys" type="node" name="qualisys" output="screen">
+    <param name="server" value="$(arg server)"/>
+    <param name="rate_limit" value="$(arg rate_limit)"/>
+  </node>
+
+  <node pkg="tf2_ros" type="static_transform_publisher" name="qualisys_map" args="0 0 0 0 0 0 map qualisys"/>
+  <node type="rviz" name="rviz" pkg="rviz" args="-d $(find qualisys)/launch/qualisys.rviz"/>
+
+  <node name="record" pkg="rosbag" type="record" args="record -o cf1_pose /qualisys/cf1/pose"/>
+</launch>

@@ -1,0 +1,8 @@
+prefix=/home/sjtudp/catkin_ws/devel
+
+Name: qualisys
+Description: Description of qualisys
+Version: 0.1.0
+Cflags: -I/home/sjtudp/catkin_ws/src/qualisys_ros/include
+Libs: -L${prefix}/lib -lqualisys
+Requires: 

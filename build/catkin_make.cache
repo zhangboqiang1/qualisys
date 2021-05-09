@@ -1,0 +1,2 @@
+qualisys_ros
+-DCATKIN_DEVEL_PREFIX=/home/sjtudp/catkin_ws/devel -DCMAKE_INSTALL_PREFIX=/home/sjtudp/catkin_ws/install -G Unix Makefiles
